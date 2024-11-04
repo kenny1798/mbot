@@ -307,7 +307,7 @@ router.post('/create/campaign/', upload.single('excelFile'), validateToken, asyn
                             const scheduledCampaign = () => {
                                 const client = new Client({
                                     authStrategy: new LocalAuth({clientId: username}),
-                                    puppeteer: {headless: false,
+                                    puppeteer: {headless: true,
                                     args: [ '--disable-gpu',
                                      '--disable-setuid-sandbox',
                                      '--no-sandbox'],
@@ -434,7 +434,7 @@ router.post('/create/campaign/', upload.single('excelFile'), validateToken, asyn
                         }else{
                                 const client = new Client({
                                     authStrategy: new LocalAuth({clientId: username}),
-                                    puppeteer: {headless: false,
+                                    puppeteer: {headless: true,
                                     args: [ '--disable-gpu',
                                      '--disable-setuid-sandbox',
                                      '--no-sandbox'],
@@ -625,7 +625,7 @@ router.get('/update/campaign/status/:id', validateToken, async (req,res) => {
             res.status(201).json({message:'Campaign Started'})
             const client = new Client({
                 authStrategy: new LocalAuth({clientId: username}),
-                puppeteer: {headless: false,
+                puppeteer: {headless: true,
                 args: [ '--disable-gpu',
                  '--disable-setuid-sandbox',
                  '--no-sandbox'],
@@ -798,7 +798,7 @@ router.get('/restart/campaign', async (req,res) => {
     
     const client = new Client({
         authStrategy: new LocalAuth({clientId: username}),
-        puppeteer: {headless: false,
+        puppeteer: {headless: true,
         args: [ '--disable-gpu',
          '--disable-setuid-sandbox',
          '--no-sandbox'],
