@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://mirads.io",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
