@@ -62,7 +62,7 @@ app.get('/test',validateToken, async (req,res) => {
 app.get('/test1', async (req,res) => {
     const client = new Client({
         authStrategy: new LocalAuth({clientId:'kenny'}),
-        puppeteer: {headless: false,
+        puppeteer: {headless: true,
         args: [ '--disable-gpu',
         '--disable-setuid-sandbox',
         '--no-sandbox'],
@@ -117,7 +117,7 @@ app.get('/whatsapp-auth/', validateToken, async (req,res) => {
                 console.log('here 1')
                 const client = new Client({
                     authStrategy: new LocalAuth({clientId: username}),
-                    puppeteer: {headless: false,
+                    puppeteer: {headless: true,
                     args: [ '--disable-gpu',
                      '--disable-setuid-sandbox',
                      '--no-sandbox'],
@@ -210,7 +210,7 @@ app.get('/whatsapp-auth/', validateToken, async (req,res) => {
             console.log('here 2')
             const client = new Client({
                 authStrategy: new LocalAuth({clientId: username}),
-                puppeteer: {headless: false,
+                puppeteer: {headless: true,
                 args: [ '--disable-gpu',
                  '--disable-setuid-sandbox',
                  '--no-sandbox'],
